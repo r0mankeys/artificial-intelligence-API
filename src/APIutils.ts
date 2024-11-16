@@ -2,7 +2,7 @@ import type { BoundingBox, Region, SummaryObjectSucces, SummaryObjectFail } from
 
 async function summarizeText(textToBeSummarized: string): Promise<SummaryObjectSucces | SummaryObjectFail | null> {
   try {
-    const response = await fetch('/api/nlp/bart-large-cnn/summarization', {
+    const response = await fetch("https://api.nlpcloud.io/v1/bart-large-cnn/summarization", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ async function detectFace(imageURL: string): Promise<Array<BoundingBox> | undefi
         },
         body: raw
     };
-    const response = await fetch("/api/clarifai/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
+    const response = await fetch("/api/clarifai", requestOptions);
     const result = await response.json();
     try {
         const regions = result.outputs[0].data.regions;

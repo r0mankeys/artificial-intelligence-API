@@ -9,20 +9,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  server: {
-    proxy: {
-      "/api/nlp": {
-        target: "https://api.nlpcloud.io/v1",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/nlp/, ""), // Strip only /api/nlp
-        secure: false,
-      },
-      "/api/clarifai": {
-        target: "https://api.clarifai.com/v2/models",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/clarifai/, ""), // Strip only /api/clarifai
-        secure: false,
-      }
-    },
-  },
 });
