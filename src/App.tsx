@@ -12,8 +12,8 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/api/sumarai" element={<Sumarai />} />
-            <Route path="/api/face-finder" element={<FaceFinder />} />
+            <Route path="/api-page/sumarai" element={<Sumarai />} />
+            <Route path="/api-page/face-finder" element={<FaceFinder />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
